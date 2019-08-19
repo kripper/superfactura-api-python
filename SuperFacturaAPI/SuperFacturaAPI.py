@@ -57,8 +57,8 @@ class SuperFacturaAPI:
 		})
 
 		headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"}
-		conn = httplib.HTTPConnection("superfactura.cl:80")
-		conn.request("POST", "?a=json", params, headers)
+		conn = httplib.HTTPSConnection("superfactura.cl")
+		conn.request("POST", "/?a=json", params, headers)
 		response = conn.getresponse()
 		body = response.read();
 		conn.close()
